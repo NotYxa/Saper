@@ -61,14 +61,14 @@ void initBoard(int rows, int cols, int mines, char **board) {
 
 void printBoard(int rows, int cols, char **visibleBoard) {
     // Drukowanie naglowka z numerami kolumn
-    printf("    "); // Odstep dla numerow wierszy
+    printf("    "); 
     for (int j = 0; j < cols; j++) {
         printf("%2d ", j);
     }
     printf("\n");
 
     // Drukowanie linii separatora
-    printf("   +"); // Odstep dla numerow wierszy
+    printf("   +");
     for (int j = 0; j < cols; j++) {
         printf("---");
     }
@@ -76,7 +76,7 @@ void printBoard(int rows, int cols, char **visibleBoard) {
 
     // Drukowanie planszy z numerami wierszy
     for (int i = 0; i < rows; i++) {
-        printf("%2d |", i); // Numer wiersza
+        printf("%2d |", i);
         for (int j = 0; j < cols; j++) {
             printf(" %c ", visibleBoard[i][j]);
         }
@@ -89,16 +89,7 @@ void printBoard(int rows, int cols, char **visibleBoard) {
         printf("---");
     }
     printf("\n");
-
-    for (int i = 0; i < rows; i++) {
-        printf("%2d |", i); // Numer wiersza
-        for (int j = 0; j < cols; j++) {
-            printf(" %c ", visibleBoard[i][j]);
-        }
-        printf("\n");
-    }
 }
-
 // Odkrywa pole na planszy
 int uncoverTile(int x, int y, char **board, char **visibleBoard, int rows, int cols) {
     if (!isValid(x, y, rows, cols) || visibleBoard[x][y] != '#')
