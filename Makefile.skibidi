@@ -1,11 +1,12 @@
 CC = gcc
 CFLAGS = -Wall -g
-TARGET = minesweeper
 
-all: $(TARGET)
+all: minesweeper test
 
-$(TARGET): main.o board.o game.o io.o scores.o
-	$(CC) $(CFLAGS) -o $(TARGET) main.o board.o game.o io.o scores.o
+minesweeper: main.o board.o game.o io.o scores.o
+	$(CC) $(CFLAGS) -o minesweeper main.o board.o game.o io.o scores.o
+
+test: 
 
 main.o: main.c board.h game.h io.h scores.h
 	$(CC) $(CFLAGS) -c main.c
